@@ -20,6 +20,16 @@
 
         </form>
 
+<div class="control-group">
+    <label class="control-label">{{ _('Gerät auswählen') }}</label>
+    <div class="controls">
+        <select class="input-block-level"
+                data-bind="options: devices,
+                           optionsText: 'name',
+                           optionsValue: 'id',
+                           value: selectedDevice"></select>
+    </div>
+</div>
 
 
         <h1>{{ _("Outlet / Light") }}</h1>
