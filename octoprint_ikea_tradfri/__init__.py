@@ -560,9 +560,12 @@ class IkeaTradfriPlugin(
             '/15001/{}'.format(deviceId), '{ "3311": [{ "5850": 0 }] }')
 
     def get_api_commands(self):
-        return dict(
-            turnOn=[], turnOff=[], checkStatus=[]
-        )
+    return dict(
+        turnOn=[],
+        turnOff=[],
+        checkStatus=[],
+        listDevices=[]
+    )
 
     def getDeviceFromId(self, id):
         selected_devices = self._settings.get(['selected_devices']);
