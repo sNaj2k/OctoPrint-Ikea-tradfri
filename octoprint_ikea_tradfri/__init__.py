@@ -591,6 +591,21 @@ class IkeaTradfriPlugin(
                     return flask.jsonify(res)
             else:
                 self._logger.warn('turn on without device data')
+        if command == "listDevices":
+        # Geräte aus pytradfri holen
+        conf = self._load_psk()
+        if not conf:
+            return flask.jsonify([])
+        host = list(conf.keys())[0]
+        identity = conf[host]["identity"]
+        key = conf[host]["key"]
+
+        api_factory = APIFactory(host, key, identity)
+        api = api_factory.request
+        devices = api(Gateway().get_devices())
+
+        return flask.jsonify([{"id": d.id, "name": d.name} for d in devices])
+        
         elif command == "turnOff":
             if 'dev' in data:
                 self.turnOff(data['dev'])
