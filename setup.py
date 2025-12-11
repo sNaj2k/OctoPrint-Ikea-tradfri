@@ -34,7 +34,7 @@ plugin_url = "https://github.com/ralmn/OctoPrint-Ikea-tradfri"
 plugin_license = "AGPLv3"
 
 # Any additional requirements besides OctoPrint should be listed here
-plugin_requires = ["sarge", "aiocoap[all] @ https://github.com/chrysn/aiocoap/archive/master.zip"]
+plugin_requires = ["sarge", "pytradfri", "aiocoap"]
 
 ### --------------------------------------------------------------------------------------------------------------------
 ### More advanced options that you usually shouldn't have to touch follow after this point
@@ -60,8 +60,14 @@ plugin_ignored_packages = []
 # Example:
 #     plugin_requires = ["someDependency==dev"]
 #     additional_setup_parameters = {"dependency_links": ["https://github.com/someUser/someRepo/archive/master.zip#egg=someDependency-dev"]}
+python
 additional_setup_parameters = {
-    "python_requires": ">3,<4"
+    "python_requires": ">=3.9,<3.14",
+    "entry_points": {
+        "octoprint.plugin": [
+            "ikea_tradfri = octoprint_ikea_tradfri"
+        ]
+    }
 }
 
 ########################################################################################################################
