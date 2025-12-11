@@ -234,7 +234,20 @@ $(function () {
                 self.wizardError("Error when get devices")
             });
         }
+self.devices = ko.observableArray([]);
+self.selectedDevice = ko.observable();
 
+self.loadDevices = function() {
+    OctoPrint.simpleApiCommand("ikea_tradfri", "listDevices", {})
+        .done(function(response) {
+            self.devices(response);
+        });
+};
+
+// Beim Öffnen der Settings Geräte laden
+self.onSettingsShown = function() {
+    self.loadDevices();
+};
         let currentDevice = null;
 
         self.showDeviceDialogEdit = function (device) {
