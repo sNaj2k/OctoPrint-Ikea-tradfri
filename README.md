@@ -6,6 +6,8 @@ I have no idea what I'm doing, but it is working now.
 
 ##Installation
 
+Copy https://github.com/sNaj2k/OctoPrint-Ikea-tradfri/archive/refs/heads/master.zip and install with URL in plugin manager
+
 
 
 ---
