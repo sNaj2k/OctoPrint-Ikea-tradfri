@@ -4,7 +4,7 @@ Plugin was dicontinued. After getting random issues I asked ChatGPT to make it w
 I have no idea what I'm doing, but it is working now.   
 
 
-##Installation
+## Installation
 
 Copy https://github.com/sNaj2k/OctoPrint-Ikea-tradfri/archive/refs/heads/master.zip and install with URL in plugin manager
 
