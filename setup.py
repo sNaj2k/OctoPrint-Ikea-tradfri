@@ -22,7 +22,7 @@ plugin_version = "1.7.5"
 plugin_description = """Control Ikea Tradfri outlet from Octoprint"""
 
 # The plugin's author. Can be overwritten within OctoPrint's internal data via __plugin_author__ in the plugin module
-plugin_author = "sNaj2k" | # original creator is Mathieu \"ralmn\" HIREL
+plugin_author = "sNaj2k"  # original creator is Mathieu \"ralmn\" HIREL
 
 # The plugin's author's mail address.
 plugin_author_email = ""
