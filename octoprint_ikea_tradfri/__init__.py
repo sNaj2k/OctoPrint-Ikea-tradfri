@@ -47,24 +47,26 @@ class IkeaTradfriPlugin(
     pool = concurrent.futures.ThreadPoolExecutor()
     baseTopic = None
         
-    # Hilfsfunktion für automatische PSK-Generierung
-    def _generate_and_store_psk(self, host, security_code):
-        conf_file = os.path.join(self._settings.getBaseFolder("data"), "tradfri_psk.json")
+   def _generate_and_store_psk(self, host, security_code):
+    import os, json
+    from pytradfri.api.libcoap_api import APIFactory
 
-        # Falls schon vorhanden, laden
-        if os.path.exists(conf_file):
-            with open(conf_file) as f:
-                return json.load(f)
+    conf_file = os.path.join(self._settings.getBaseFolder("data"), "tradfri_psk.json")
 
-        # Neues PSK generieren
-        api_factory = APIFactory(host, security_code)
-        psk = api_factory.generate_psk(security_code)
+    # Falls schon vorhanden, laden
+    if os.path.exists(conf_file):
+        with open(conf_file) as f:
+            return json.load(f)
 
-        conf = {host: {"identity": "Client_identity", "key": psk}}
-        with open(conf_file, "w") as f:
-            json.dump(conf, f)
+    # Neues PSK generieren
+    api_factory = APIFactory(host, security_code)
+    psk = api_factory.generate_psk(security_code)
 
-        return conf
+    conf = {host: {"identity": "Client_identity", "key": psk}}
+    with open(conf_file, "w") as f:
+        json.dump(conf, f)
+
+    return conf
         
     def __init__(self):
         self.mqtt_publish = lambda *args, **kwargs: None
