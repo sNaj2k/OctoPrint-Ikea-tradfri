@@ -1,7 +1,7 @@
 # OctoPrint-Ikea-tradfri
 
 Plugin was dicontinued and I had to install it. After getting random issues I asked ChatGPT to make it work again and after some time I brought it back to life. 
-I have no idea what I'm doing, but it did the job. 
+I have no idea what I'm doing, but it is working.  
 
 ---
 
