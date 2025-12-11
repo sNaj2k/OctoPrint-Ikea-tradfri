@@ -1,9 +1,7 @@
 # OctoPrint-Ikea-tradfri
 
-# Important Notice: Plugin Discontinued
-
-This plugin is no longer maintained. 
-DO NOT INSTALL THIS PLUGIN !
+Plugin was dicontinued and I had to install it. After getting random issues I asked ChatGPT to make it work again and after some time I brought it back to life. 
+I have no idea what I'm doing, but it did the job. 
 
 ---
 
